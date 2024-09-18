@@ -115,7 +115,7 @@ body{
     opacity: 0.2;
 }
 .clock.start-animation .colon{
-    animation:blink 0.7s ease infinite ;
+    animation:blink 0.5s ease infinite ;
 }
 @keyframes blink {
     from{
