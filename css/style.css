@@ -143,6 +143,7 @@ body{
 .stop{background-color: var(--stop-color);}
 .reset{background-color: var(--reset-color);}
 button{
+    outline: none;
     border: none;
     font-size: 18px;
     width: 70px;
