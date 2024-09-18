@@ -6,7 +6,7 @@ let hrs=min=sec=ms=0,startTimer;
 
 btnStart.addEventListener("click",()=>{
     btnStart.classList.add("start-active");
-    btnStart.classList.remove("stop-active");
+    btnStop.classList.remove("stop-active");
     clock.classList.add("start-animation");
     startTimer=setInterval(()=>{
         ms++;
