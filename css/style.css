@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+    font-family: digital-7;
+    src: url('digital-7.ttf');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-color:#dcdde1;
+    --clock-color:#333;
+    --diplay-color:#2f3640;
+    --brand-color:#bcd3c7;
+    --slogan-color:#95a5a6;
+    --frame-br:#7f8fa6;
+    --start-color:#44bd32;
+    --stop-color:#ea2027;
+    --reset-color:#8e44ad;
+    --btn-color:#fff;
+    --btn-active:rgba(228,227,227);
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins",serif;
+    background-color: var(--bg-color);
+    user-select: none;
+}
+.clock{
+    width: 300px;
+    height: 300px;
+    background-color: var(--clock-color);
+    border-radius: 50%;
+    box-shadow:inset 
+    0 -2px 0 0 rgba(0,0,0,0.8),
+    1px 1px 0 0 rgba(0,0,0,0.8),
+    2px 2px 0 0 rgba(0,0,0,0.8),
+    3px 3px 0 0 rgba(0,0,0,0.8),
+    4px 4px 0 0 rgba(0,0,0,0.8),
+    5px 5px 0 0 rgba(0,0,0,0.8),
+    6px 6px 0 0 rgba(0,0,0,0.8),
+    7px 7px 0 0 rgba(0,0,0,0.8),
+    8px 8px 0 0 rgba(0,0,0,0.8),
+    9px 9px 0 0 rgba(0,0,0,0.8),
+    10px 10px 0 0 rgba(0,0,0,0.8),
+    11px 11px 0 0 rgba(0,0,0,0.8),
+    12px 12px 0 0 rgba(0,0,0,0.8),
+    13px 13px 0 0 rgba(0,0,0,0.8),
+    14px 14px 0 0 rgba(0,0,0,0.8),
+    15px 15px 0 0 rgba(0,0,0,0.8);
+    position: relative;
+}
+.frame{
+    width: 280px;
+    height: 280px;
+    background-color: var(--diplay-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid var(--frame-br);
+}
+.brand{
+    position: absolute;
+    top:15%;
+    left: 48%;
+    z-index: 4;
+    transform: translateX(-48%);
+    font-size: 28px;
+    color: var(--brand-color);
+    font-size: 500;
+}
+.slogan{
+    position: absolute;
+    top: 85px;
+    left: 48%;
+    transform: translateX(-48%);
+    z-index: 1;
+    font-size: 13px;
+    color: var(--slogan-color);
+    font-weight: 500;
+}
+.display{
+    width: 70%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--diplay-color);
+    border-radius: 50px;
+    font-size: 40px;
+    font-weight: 500;
+    color: white;
+    z-index: 10;
+}
+.display  div{
+    font-family: digital-7;
+}
+.hrs,.mins,.secs,.msec{
+    width: 20px;
+    text-align: center;
+}
+.colon{
+    opacity: 0.2;
+}
+.clock.start-animation .colon{
+    animation:blink 0.7s ease infinite ;
+}
+@keyframes blink {
+    from{
+       opacity:0.2;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.buttons{
+    background-color: var(--frame-br);
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 93%;
+    height: 130px;
+    border-radius: 0 0 180px 180px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.start{background-color: var(--start-color);}
+.stop{background-color: var(--stop-color);}
+.reset{background-color: var(--reset-color);}
+button{
+    border: none;
+    font-size: 18px;
+    width: 70px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    margin-left: 5px;
+    box-shadow:inset 0 -2px 0 0 rgba(0,0,0,0.2),
+    1px 1px 0 0 rgba(0,0,0,0.2),
+    2px 2px 0 0 rgba(0,0,0,0.2);
+    transition: all 0.3s ease-out;
+}
+button:active{
+    color: var(--btn-active);
+    box-shadow:inset 0 -4px 0 0 rgba(0,0,0,0.2),
+    1px 1px 0 0 rgba(0,0,0,0.2),
+    2px 2px 0 0 rgba(0,0,0,0.2),
+    3px 3px 0 0 rgba(0,0,0,0.2),
+    4px 4px 0 0 rgba(0,0,0,0.2);
+}
+.group{
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+.buttons p{
+    text-transform: uppercase;
+    background-color: var(--bg-color);
+    padding-left: 5px;
+    color: var(--diplay-color);
+    font-size: 12px;
+    font-weight: 500;
+}
+.buttons span{
+    background-color: var(--diplay-color);
+    color: var(--bg-color);
+    padding: 0px 10px;
+    display: inline-block;
+}
+.start-active,
+.stop-active{
+    pointer-events: none;
+    opacity: 0.5;
+}
